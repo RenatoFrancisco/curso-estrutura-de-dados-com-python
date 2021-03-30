@@ -1,6 +1,6 @@
 class Celula:
     def __init__(self, conteudo):
-        self.conteudo
+        self.conteudo = conteudo
         self.proximo = None
 
 class ListaLigada:
@@ -15,3 +15,15 @@ class ListaLigada:
     @property
     def quantidade(self):
         return self._quantidade
+
+    def inserir_no_inicio(self, conteudo):
+        celula = Celula(conteudo)
+        celula.proximo = self._inicio
+        self._inicio = celula
+        self._quantidade += 1
+
+    def imprimir(self):
+        atual = self.inicio
+        for i in range(0, self.quantidade):
+            print(atual.conteudo)
+            atual = atual.proximo

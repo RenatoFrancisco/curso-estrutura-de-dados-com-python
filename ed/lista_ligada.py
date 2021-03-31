@@ -51,3 +51,10 @@ class ListaLigada:
         for i in range(0, self.quantidade):
             print(atual.conteudo)
             atual = atual.proximo
+
+    def remover_do_inicio(self):
+        removido = self.inicio
+        self._inicio = removido.proximo
+        removido.proximo = None
+        self._quantidade -= 1
+        return removido.conteudo

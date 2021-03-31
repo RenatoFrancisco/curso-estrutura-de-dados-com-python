@@ -27,9 +27,39 @@ def main():
     lista.inserir(0, loja5)
     lista.inserir(lista.quantidade, loja6)
 
+    lista.imprimir()
+
+    print('------------------------')
     removido = lista.remover_do_inicio()
+    print('Removido: {}'.format(removido))
+    lista.imprimir()
+
+    print('------------------------')
+    removido = lista.remover_do_inicio()
+    print('Removido: {}'.format(removido))
     print(lista.quantidade)
     lista.imprimir()
-    print('Removido: {}'.format(removido))
+
+    print('------------------------')
+    removido =  lista.remover(2)
+    print('Removido da posição 2: {}'.format(removido))
+    print(lista.quantidade)
+    lista.imprimir()
+
+    print('------------------------')
+    removido =  lista.remover(2)
+    print('Removido da última posição: {}'.format(removido))
+    print(lista.quantidade)
+    lista.imprimir()
+
+    print('------------------------')
+    removido = lista.remover(0)
+    print('Removido da posição 0: {}'.format(removido))
+    print(lista.quantidade)
+    lista.imprimir()
+
+    print('------------------------')
+    print('Item 0:')
+    print(lista.item(0))
 
 main()

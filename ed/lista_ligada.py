@@ -22,6 +22,30 @@ class ListaLigada:
         self._inicio = celula
         self._quantidade += 1
 
+    def inserir(self, posicao, conteudo):
+        if posicao == 0:
+            self.inserir_no_inicio(conteudo)
+            return
+        
+        celula = Celula(conteudo)
+        esquerda = self._celula(posicao -1)
+        celula.proximo = esquerda.proximo
+        esquerda.proximo = celula
+        self._quantidade += 1
+
+    def _celula(self, posicao):
+        self._validar_posicao(posicao)
+        atual = self.inicio
+
+        for i in range(0, posicao):
+            atual = atual.proximo
+        return atual
+
+    def _validar_posicao(self, posicao):
+        if 0 <= posicao < self.quantidade:
+            return True
+        raise IndexError('Posição inválida {}'.format(posicao))
+
     def imprimir(self):
         atual = self.inicio
         for i in range(0, self.quantidade):

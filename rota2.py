@@ -5,7 +5,7 @@ class Loja:
         self.nome = nome
         self.endereco = endereco
 
-    def _repr__(self):
+    def __repr__(self):
         return '{} - {}'.format(self.nome, self.endereco)
 
 def main():
@@ -14,6 +14,10 @@ def main():
     loja3 = Loja('Padaria Pão Quente', 'Praça da Árvore')
 
     lista = ListaDuplamenteLigada()
-    print(lista.quantidade)
+    print('Quantidade: {}'.format(lista.quantidade))
+
+    lista._inserir_em_lista_vazia(loja1)
+    print('Quantidade: {}'.format(lista.quantidade))
+    print(lista.item(0))
 
 main()

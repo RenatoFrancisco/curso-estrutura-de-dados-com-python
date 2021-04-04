@@ -16,8 +16,18 @@ def main():
     lista = ListaDuplamenteLigada()
     print('Quantidade: {}'.format(lista.quantidade))
 
-    lista._inserir_em_lista_vazia(loja1)
+    lista.inserir_no_inicio(loja1)
     print('Quantidade: {}'.format(lista.quantidade))
     print(lista.item(0))
+
+    lista.inserir_no_inicio(loja2)
+    print('Quantidade: {}'.format(lista.quantidade))
+    print(lista.item(0))
+    print(lista.item(1))
+
+    lista.inserir_no_inicio(loja3)
+    print('Quantidade: {}'.format(lista.quantidade))
+    lista.imprimir()
+
 
 main()

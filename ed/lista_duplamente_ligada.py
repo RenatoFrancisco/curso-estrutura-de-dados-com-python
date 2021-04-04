@@ -28,6 +28,16 @@ class ListaDuplamenteLigada:
         self._fim = celula
         self._quantidade += 1
 
+    def inserir_no_inicio(self, conteudo):
+        if self.quantidade == 0:
+            return self._inserir_em_lista_vazia(conteudo)
+
+        celula = Celula(conteudo)
+        celula.proximo = self.inicio
+        self._inicio =  celula
+        self._quantidade += 1 
+
+
     def item(self, posicao):
         celula = self._celula(posicao)
         return celula.conteudo
@@ -44,4 +54,10 @@ class ListaDuplamenteLigada:
         for i in range(0, posicao):
             atual = atual.proximo
         return atual
+
+    def imprimir(self):
+        atual = self.inicio
+        for i in range(0, self.quantidade):
+            print(atual.conteudo)
+            atual = atual.proximo
 

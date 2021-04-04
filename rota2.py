@@ -6,7 +6,7 @@ class Loja:
         self.endereco = endereco
 
     def __repr__(self):
-        return '{} - {}'.format(self.nome, self.endereco)
+        return ' * {} - {}'.format(self.nome, self.endereco)
 
 def situacao(lista):
     print('Quantidade: {}'.format(lista.quantidade))
@@ -46,6 +46,22 @@ def main():
 
     removido = lista.remover_do_fim()
     print('Removido do fim: {}'.format(removido))
+    situacao(lista)
+
+    removido = lista.remover(1)
+    print('Removido da Posição 1: {}'.format(removido))
+    situacao(lista)
+
+    removido = lista.remover(5)
+    print('Removido da Posição 5: {}'.format(removido))
+    situacao(lista)
+
+    removido = lista.remover(0)
+    print('Removido da Posiação 0: {}'.format(removido))
+    situacao(lista)
+
+    removido = lista.remover(4)
+    print('Removido da Posição 4: {}'.format(removido))
     situacao(lista)
 
 main()

@@ -123,3 +123,22 @@ class ListaDuplamenteLigada:
         removido.anterior = None
         self._quantidade -= 1
         return removido.conteudo
+
+    def remover(self, posicao):
+        if  posicao == 0:
+            return self.remover_do_inicio()
+        
+        if posicao == self.quantidade -1:
+            return self.remover_do_fim()
+
+        removido = self._celula(posicao)
+        esquerda = removido.anterior
+        direita = removido.proximo
+        removido.proximo = None
+        removido.anterior = None
+        removido.proximo = direita
+        removido.anterior = esquerda
+        self._quantidade -= 1
+        return removido.conteudo
+
+        

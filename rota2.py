@@ -19,6 +19,10 @@ def main():
     loja4 = Loja('Supermercado', 'Rua do Pomar, 23')
     loja5 = Loja('Mercado', 'Rua das Flores, 98')
     loja6 = Loja('Quitanda', 'Rua da Fazenda, 899')
+    loja7 = Loja('Minimercado das Frutas', 'Rua do Pomar, 66')
+    loja8 = Loja('Supermercado das Frutas', 'Rua do Pomar, 600')
+    loja9 = Loja('Hortifruti da Terra', 'Rua das Laranjeiras, 800')
+    loja10 = Loja('Mercado do Campo', 'Rua da Fazenda, 1500')
 
     lista = ListaDuplamenteLigada()
     lista.inserir_no_inicio(loja1)
@@ -28,6 +32,11 @@ def main():
     lista.inserir_no_fim(loja4)
     lista.inserir_no_fim(loja5)
     lista.inserir_no_fim(loja6)
+
+    lista.inserir(2, loja7)
+    lista.inserir(7, loja8)
+    lista.inserir(0, loja9)
+    lista.inserir(6, loja10)
 
     situacao(lista)
 

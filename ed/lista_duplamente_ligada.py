@@ -47,6 +47,22 @@ class ListaDuplamenteLigada:
         self._fim = celula
         self._quantidade += 1
 
+    def inserir(self, posicao, conteudo):
+        if posicao == 0:
+            return self.inserir_no_inicio(conteudo)
+
+        if posicao == self.quantidade:
+            return self.inserir_no_fim(conteudo)
+
+        esquerda = self._celula(posicao -1)
+        direita = esquerda.proximo
+        celula = Celula(conteudo)
+        celula.proximo = direita
+        celula.anterior = esquerda
+        esquerda.proximo = celula
+        direita.anterior = celula
+        self._quantidade += 1
+
 
     def item(self, posicao):
         celula = self._celula(posicao)
@@ -59,10 +75,17 @@ class ListaDuplamenteLigada:
 
     def _celula(self, posicao):
         self._validar_posicao(posicao)
+        metade = self.quantidade // 2
+        if posicao < metade:
+            atual = self.inicio
+            for i in range(0, posicao):
+                atual = atual.proximo
+            return atual
 
-        atual = self.inicio
-        for i in range(0, posicao):
-            atual = atual.proximo
+        atual = self.fim
+        for i in range(posicao+1, self.quantidade)[::-1]:
+            atual = atual.anterior
+
         return atual
 
     def imprimir(self):

@@ -40,4 +40,12 @@ def main():
 
     situacao(lista)
 
+    removido = lista.remover_do_inicio()
+    print('Removido do início: {}'.format(removido))
+    situacao(lista)
+
+    removido = lista.remover_do_fim()
+    print('Removido do fim: {}'.format(removido))
+    situacao(lista)
+
 main()
